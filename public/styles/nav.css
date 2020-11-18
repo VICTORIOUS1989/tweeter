@@ -1,12 +1,13 @@
 nav {
   height: 120px;   /* length values */
-  width: 100%;
   background-color : #4056A1;
   color: #fff;
   padding: 1.25em;
   border-radius: 5px;
   font-size: 40px;
-
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
 }
 
 nav span {
