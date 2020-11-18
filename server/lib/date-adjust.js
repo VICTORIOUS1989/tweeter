@@ -1,4 +1,3 @@
-
 "use strict";
 
 // Require fs to write to initial-tweets.json
