@@ -1,0 +1,49 @@
+.tweet {
+  display : flex;
+  flex-direction: column;
+  margin-top: 4em;
+  border: solid #000000 4px;
+  padding: 2em;
+  padding-bottom: 0.0em;
+
+}
+
+.tweetsHeader{
+  display : flex;
+  justify-content : space-between;
+  align-items: center;
+
+}
+.RightHeader {
+  display : flex;
+  align-items: center;
+
+}
+
+.tweet-content{
+  border-bottom: solid #000000 4px;
+
+}
+
+#userName {
+  flex-grow: 1;
+  padding-left: 20px;
+  font-size: 150%;
+  margin: 0;
+  line-height: 200%;
+}
+
+#handler {
+  display: none;
+}
+
+.tweet:hover  #handler {
+  display: block;
+  color: #f88379;
+
+}
+.tweet:hover {
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  font-weight: bold;
+
+}

@@ -21,6 +21,7 @@
 
       <!-- nzw tweet CSS -->
       <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+      <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -37,7 +38,7 @@
       <span>tweeter</span>
     </nav>
 
-    <header>
+    <header class="Topheader">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -60,6 +61,29 @@
         </form>
       </section>
 
+      <article class="tweet">
+
+        <header class='tweetsHeader'>
+          <div class='RightHeader'>
+            <img class='avatar' src="https://i.imgur.com/nlhLi3I.png" >
+            <div id="userName">Newton</div>
+          </div>
+          <div id="handler">@Sirlsaac</div>
+        </header>
+
+        <div class='tweet-content'>
+          <p>tweetContent</p>
+        </div>
+
+        <footer>
+          <p>10 days ago</p>
+          <div class='tweet-icons'>
+            
+          </div>
+        </footer>
+      </article>
+
     </main>
   </body>
 </html>
+
