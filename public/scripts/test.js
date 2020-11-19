@@ -11,7 +11,15 @@ $(document).ready(() => {
     }
 
   }
-  
+  const renderLastTweet = function(tweet) {
+   //$('#tweets-container').empty();
+   // for (let tweet of tweets) {
+      let $Newtweet = createTweetElement(tweet);
+    $('#tweets-container').append($Newtweet);
+
+    //}
+
+  }
   const createTweetElement = function(tweet) {
 
         const date = `${Math.round((Date.now() - Number(tweet.created_at))/(1000*3600*24))} days ago`;
@@ -41,7 +49,7 @@ $(document).ready(() => {
   }
 
   const  loadtweets = ()=> {
-  //  $('#tweets-container').empty();
+    //$('#tweets-container').empty();
     $.ajax({
       url : "/tweets", 
       method :"GET"
@@ -49,9 +57,15 @@ $(document).ready(() => {
     .then (res => {renderTweets(res)});
    }
 
-   
+   const  addLastTweet = ()=> {
+    $.ajax({
+      url : "/tweets", 
+      method :"GET"
+    })
+    .then (res => {renderLastTweet(Object.values(res).pop())});
+   }
 
-
+   loadtweets();
 
       $('form').on('submit', event => {
           event.preventDefault();
@@ -74,13 +88,13 @@ $(document).ready(() => {
           })
             .then (res => {});
         }
-        loadtweets();
+
+        addLastTweet();
 
       });
 
 
-      loadtweets();
-
+     
 
      // let TweetsData = loadtweets();
       //console.log(TweetsData);
@@ -89,3 +103,5 @@ $(document).ready(() => {
 
 
 });
+
+

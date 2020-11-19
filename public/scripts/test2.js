@@ -1,9 +1,12 @@
+
+
+
+
 $(document).ready(() => {
 
  
 
   const renderTweets = function(tweets) {
-    $('#tweets-container').empty();
     for (let tweet of tweets) {
       let $Newtweet = createTweetElement(tweet);
     $('#tweets-container').append($Newtweet);
@@ -11,12 +14,11 @@ $(document).ready(() => {
     }
 
   }
-  
+
   const createTweetElement = function(tweet) {
 
         const date = `${Math.round((Date.now() - Number(tweet.created_at))/(1000*3600*24))} days ago`;
         let  $tweet= (`<article class="tweet">
-
         <header class='tweetsHeader'>
           <div class='RightHeader'>
             <img class='avatar' src="https://i.imgur.com/nlhLi3I.png" >
@@ -24,11 +26,9 @@ $(document).ready(() => {
           </div>
           <div id="handler">${tweet.user.handle}</div>
         </header>
-
         <div class='tweet-content'>
           <p>${tweet.content.text}</p>
         </div>
-
         <footer>
           <p>${date}</p>
           <div class='tweet-icons'>   
@@ -39,17 +39,6 @@ $(document).ready(() => {
         return $tweet;
 
   }
-
-  const  loadtweets = ()=> {
-  //  $('#tweets-container').empty();
-    $.ajax({
-      url : "/tweets", 
-      method :"GET"
-    })
-    .then (res => {renderTweets(res)});
-   }
-
-   
 
 
 
@@ -74,18 +63,25 @@ $(document).ready(() => {
           })
             .then (res => {});
         }
-        loadtweets();
 
+       
       });
 
 
-      loadtweets();
+     const  loadtweets = ()=> {
+      $.ajax({
+        url : "/tweets", 
+        method :"GET"
+      })
+      .then (res => {renderTweets(res)});
+     }
 
 
      // let TweetsData = loadtweets();
       //console.log(TweetsData);
      //renderTweets(TweetsData);
-    
+     loadtweets();
+          
 
 
 });
