@@ -59,3 +59,12 @@ main section form {
   color: #f50707;
 
 }
+
+.tweet-error {
+  color: red;
+  padding: 20px;
+  border: solid red 4px;
+  font-weight: bold;
+  margin-top: 15px;
+
+}

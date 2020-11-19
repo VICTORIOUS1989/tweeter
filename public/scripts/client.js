@@ -56,14 +56,17 @@ $(document).ready(() => {
       $('form').on('submit', event => {
           event.preventDefault();
         //console.log($('form').serialize());
+
         const textArea = $('form').serialize();
         let nbcaracters = $('#tweet-text').val();
        //console.log(nbcaracters.length);
         if (nbcaracters.length > 140) {
-          alert('Charater limit exceeded!');
+        $(".container").prepend($("<div>").addClass("tweet-error").text("Slow down there, tweet away but keep it below 140").fadeIn(200).fadeOut(4500));
+        return;
         }
         if (nbcaracters === "" || nbcaracters=== null) {
-          alert('write something');
+          $(".container").prepend($("<div>").addClass("tweet-error").text("I couldn't catch that, try again?").fadeIn(200).fadeOut(4500));
+          return;        
         }
 
         if (nbcaracters.length > 0 && nbcaracters.length < 140){
