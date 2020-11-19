@@ -13,7 +13,7 @@ $(document).ready(() => {
   }
   
   const createTweetElement = function(tweet) {
-
+        
         const date = `${Math.round((Date.now() - Number(tweet.created_at))/(1000*3600*24))} days ago`;
         let  $tweet= (`<article class="tweet">
 
@@ -26,7 +26,7 @@ $(document).ready(() => {
         </header>
 
         <div class='tweet-content'>
-          <p>${tweet.content.text}</p>
+          <p>${escape(tweet.content.text)}</p>
         </div>
 
         <footer>
@@ -89,3 +89,10 @@ $(document).ready(() => {
 
 
 });
+
+
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
