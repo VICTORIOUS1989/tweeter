@@ -45,13 +45,26 @@ $(document).ready(() => {
       $('form').on('submit', event => {
           event.preventDefault();
         //console.log($('form').serialize());
-        $.ajax({
-          url : "/tweets/", 
-          method :"POST",
-          data : $('form').serialize()
-        })
-          .then (res => console.log(res));
+        const textArea = $('form').serialize();
+        let nbcaracters = $('#tweet-text').val();
+       //console.log(nbcaracters.length);
+        if (nbcaracters.length > 140) {
+          alert('Charater limit exceeded!');
+        }
+        if (nbcaracters === "" || nbcaracters=== null) {
+          alert('write something');
+        }
 
+        if (nbcaracters.length > 0 && nbcaracters.length < 140){
+          $.ajax({
+            url : "/tweets/", 
+            method :"POST",
+            data : textArea
+          })
+            .then (res => {});
+        }
+
+       
       });
 
 
