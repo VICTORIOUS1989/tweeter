@@ -24,7 +24,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 
 #screenshot
-
+https://github.com/VICTORIOUS1989/tweeter/blob/master/Screenshot%20from%202020-11-20%2012-38-20.png?raw=true
 
 
 
