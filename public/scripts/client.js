@@ -6,7 +6,7 @@ $(document).ready(() => {
     $('#tweets-container').empty();
     for (let tweet of tweets) {
       let $Newtweet = createTweetElement(tweet);
-    $('#tweets-container').append($Newtweet);
+    $('#tweets-container').prepend($Newtweet);
 
     }
 
@@ -31,7 +31,10 @@ $(document).ready(() => {
 
         <footer>
           <p>${date}</p>
-          <div class='tweet-icons'>   
+          <div class='tweet-icons'>  
+          <i class="fa fa-flag" aria-hidden="true"></i>
+          <i class="fa fa-retweet"></i>
+          <i class="fa fa-heart" aria-hidden="true"></i>
           </div>
         </footer>
         </article> `);

@@ -4,13 +4,21 @@ nav {
   color: #fff;
   padding: 1.25em;
   border-radius: 5px;
-  font-size: 40px;
+  font-size: 35px;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav span {
   font-family: 'Bungee', sans-serif;
+
+}
+
+#composeTopButton {
+  font-size: 5px;
 
 }

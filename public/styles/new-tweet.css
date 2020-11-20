@@ -68,3 +68,14 @@ main section form {
   margin-top: 15px;
 
 }
+
+label {
+font-weight: bold;
+}
+
+footer {
+  display: flex;
+  justify-content : space-between;
+  align-items: center;
+
+}
