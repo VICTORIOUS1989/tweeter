@@ -11,7 +11,7 @@
 
 }
 
-.new-tweet form textarea {
+#tweet-text {
   margin-top: 0;
   background:transparent;
   outline:none;

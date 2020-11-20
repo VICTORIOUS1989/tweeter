@@ -75,9 +75,9 @@ $(document).ready(() => {
             method :"POST",
             data : textArea
           })
-            .then (res => {});
+            .then (res => {loadtweets();});
         }
-        loadtweets();
+        
 
       });
 
