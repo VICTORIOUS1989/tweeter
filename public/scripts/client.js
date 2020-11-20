@@ -75,7 +75,12 @@ $(document).ready(() => {
             method :"POST",
             data : textArea
           })
-            .then (res => {loadtweets();});
+
+            .then (res => {
+              $('#tweet-text').val("");
+              $("form").find('.counter').val(140);
+              loadtweets();
+            });
         }
         
 
