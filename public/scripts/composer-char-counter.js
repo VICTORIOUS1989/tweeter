@@ -1,16 +1,5 @@
 $(document).ready(function() {
-/*
-  $('textarea').on('keyup', event => {
-    event.preventDefault()
 
-    console.log($(event.target).find('input').val())
-    //const text = $(event.target).find('input').val()
-
-   // const newListItem = $('<li>').text(text)
-
-    //$('ul').append(newListItem)
-  })
-*/
 
   $("#tweet-text").on('keyup', function() {
     //console.log( $(this).val().length); //The this keyword is a reference to the button

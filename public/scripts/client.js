@@ -56,47 +56,38 @@ $(document).ready(() => {
 
 
 
-      $('form').on('submit', event => {
-          event.preventDefault();
-        //console.log($('form').serialize());
+$('form').on('submit', event => {
+  event.preventDefault();
 
-        const textArea = $('form').serialize();
-        let nbcaracters = $('#tweet-text').val();
-       //console.log(nbcaracters.length);
-        if (nbcaracters.length > 140) {
-        $(".container").prepend($("<div>").addClass("tweet-error").text("Slow down there, tweet away but keep it below 140").fadeIn(200).fadeOut(4500));
-        return;
-        }
-        if (nbcaracters === "" || nbcaracters=== null) {
-          $(".container").prepend($("<div>").addClass("tweet-error").text("I couldn't catch that, try again?").fadeIn(200).fadeOut(4500));
+  const textArea = $('form').serialize();
+  let nbcaracters = $('#tweet-text').val();
+  if (nbcaracters.length > 140) {
+    $(".container").prepend($("<div>").addClass("tweet-error").text("Slow down there, tweet away but keep it below 140").fadeIn(200).fadeOut(4500));
+    return;
+    }
+      if (nbcaracters === "" || nbcaracters=== null) {
+        $(".container").prepend($("<div>").addClass("tweet-error").text("I couldn't catch that, try again?").fadeIn(200).fadeOut(4500));
           return;        
         }
 
-        if (nbcaracters.length > 0 && nbcaracters.length < 140){
-          $.ajax({
-            url : "/tweets/", 
-            method :"POST",
-            data : textArea
-          })
-
-            .then (res => {
-              $('#tweet-text').val("");
-              $("form").find('.counter').val(140);
-              loadtweets();
-            });
-        }
-        
+      if (nbcaracters.length > 0 && nbcaracters.length < 140){
+        $.ajax({
+        url : "/tweets/", 
+        method :"POST",
+        data : textArea
+        })
+        .then (res => {
+          $('#tweet-text').val("");
+          $("form").find('.counter').val(140);
+          loadtweets();
+          });
+        }      
 
       });
 
 
       loadtweets();
 
-
-     // let TweetsData = loadtweets();
-      //console.log(TweetsData);
-     //renderTweets(TweetsData);
-    
 
 
 });
